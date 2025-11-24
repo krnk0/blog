@@ -15,6 +15,9 @@ export default function Index() {
         <li>
           <Link href="/article/" className="hover:underline">Articles</Link>
         </li>
+        <li>
+          <a href="https://mb.krnk.app" className="hover:underline">Microblog</a>
+        </li>
       </ul>
     </main>
   )

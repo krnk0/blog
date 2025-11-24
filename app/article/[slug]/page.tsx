@@ -18,11 +18,11 @@ export default async function Page({ params }: { params: Params }) {
   if (!post) return notFound()
 
   return (
-    <article className="prose prose-invert max-w-prose mx-auto px-4 py-10">
+    <article className="prose prose-invert max-w-2xl mx-auto px-4 py-10">
       <Link href="/article" className="text-sm text-neutral-400 hover:text-neutral-200 no-underline mb-6 inline-block">
         記事一覧
       </Link>
-      <h1 className="mb-4">{post.title}</h1>
+      <h1 className="mb-4 text-2xl">{post.title}</h1>
       <p className="text-sm text-neutral-500 mb-10">
         {new Date(post.date).toISOString().slice(0, 10)}
       </p>

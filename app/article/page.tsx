@@ -10,6 +10,9 @@ export default async function ArticleIndex() {
   const posts: PostMeta[] = await getAllPosts()        // ← 型も util 側に揃える
   return (
     <main className="max-w-prose mx-auto px-4 py-10">
+      <Link href="/" className="text-sm text-neutral-400 hover:text-neutral-200 no-underline mb-6 inline-block">
+        Home
+      </Link>
       <ul className="list-none space-y-4">
         {posts.map((post) => (
           <li key={post.slug}>
