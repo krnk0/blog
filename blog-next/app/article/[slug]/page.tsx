@@ -1,8 +1,15 @@
 import { notFound } from 'next/navigation'
 import 'katex/dist/katex.min.css'
-import { parseMarkdown } from '@/lib/markdown'
+import { parseMarkdown, getAllPosts } from '@/lib/markdown'
 
 type Params = Promise<{ slug: string }>
+
+export async function generateStaticParams() {
+  const posts = await getAllPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
 
 export default async function Page({ params }: { params: Params }) {
   const { slug } = await params
