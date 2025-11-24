@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@config "../tailwind.config.js";
 
 :root {
   --background: #ffffff;
@@ -25,7 +27,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.prose h2 a.anchor,
-.prose h3 a.anchor {
-  @apply no-underline text-foreground after:content-['#'] after:ml-2 opacity-0 hover:opacity-100 transition-opacity;
+.prose h2 a,
+.prose h3 a {
+  @apply no-underline text-foreground;
+}
+
+.prose h2 a::after,
+.prose h3 a::after {
+  @apply content-['#'] ml-2 opacity-0 hover:opacity-100 transition-opacity;
 }
